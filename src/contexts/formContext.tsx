@@ -34,6 +34,7 @@ const formReducer = (state, action) => {
                 return {...state, github: action.payload};     
          default:
             return state;              
+            
     }
 }
 
@@ -49,5 +50,14 @@ const FormProvider = ({children}) => {
 }
 
 
-// Context
+// Context  Hook 
+const useForm = () => {;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    const context = useContext(FormContext)
+    if(context === undefined){
+        throw new Error ("useForm precisa ser usado dentro do FormProvider")
+    }
+    return context;
+}
+
+
 
